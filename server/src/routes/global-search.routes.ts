@@ -1,0 +1,1 @@
+import {Router} from "express";import {authenticate,authorize} from "../middleware/auth.js";import {globalSearch} from "../controllers/global-search.controller.js";const router=Router();router.get("/",authenticate,authorize("admin","resident","staff","security","committee"),globalSearch);export default router;
